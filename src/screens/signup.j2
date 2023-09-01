@@ -1,0 +1,80 @@
+<div class="container">
+    <h2 class="screenName">SIGN UP PAGE</h2>
+    <div class="labelContainer">
+        <label for="lblName" class="lbl">Name</label><input type="text" id="lblName" value="{{userName}}">
+        <label for="lblEmail" class="lbl">Email</label><input type="email" id="lblEmail" value="{{userEmail}}">
+        <label for="lblPin" class="lbl">PIN</label><input type="password" id="lblPin" value="{{userPin}}">
+        <label for="lblAddress" class="lbl">Address</label><input type="text" id="lblAddress" value="{{userAddress}}">
+        <label for="lblPhone" class="lbl">Phone</label><input type="text" id="lblPhone" value="{{userPhone}}">
+    </div>
+
+    {% if signupComplete %}
+    <div class="btnContainer">
+        <button class="btn" id="btnLogin" style="background-color: green;">ENTER</button>
+        <button class="btn" id="btnExit" style="background-color: brown;">CLEAR</button>
+        <button class="btn" id="btnLogin" style="background-color: brown;">BACK</button>
+    </div>
+    <style>
+        .btnContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: auto;
+            margin-top: 4rem;
+        }
+
+        .btn {
+            width: 32.5rem;
+            font-size: 3rem;
+            border: none;
+            border-radius: 15px;
+            color: aliceblue;
+        }
+    </style>
+    {% else %}
+    {% endif %}
+</div>
+<style>
+    .labelContainer {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        gap: 1rem;
+        width: 32.5rem;
+        height: auto;
+        margin-top: 4rem;
+    }
+
+    .lbl {
+        text-align: center;
+        width: 32.5rem;
+        font-size: 3rem;
+        border: none;
+        border-radius: 15px;
+        color: aliceblue;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        ;
+    }
+
+    .screenName {
+        font-size: 5rem;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    input {
+        font-size: 3rem;
+        text-align: center;
+        border: none;
+        border-radius: 15px;
+    }
+</style>

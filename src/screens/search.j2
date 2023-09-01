@@ -1,0 +1,80 @@
+{% if noResult %}
+<h1 style="text-align: center;">EMPTY!</h1>
+<h2 style="text-align: center;">{{ noResultMsg }}</h2>
+{% else %}
+<h2 style="text-align: center;">{{ searchTitle }}</h2>
+<div class="resultContainer">
+    <table class="resultTable">
+        <thead>
+            <tr>{% for header in headers %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in body %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+<div class="btnContainer">
+    <button>BACK</button>
+</div>
+<style>
+    .btnContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btnContainer button {
+        margin-top: 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        color: aliceblue;
+        background-color: grey;
+        border: none;
+        border-radius: 15px;
+        flex: 1;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .resultContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: #ccc;
+        border: 1px solid #000;
+        /* Add border around the entire table */
+        border-collapse: collapse;
+        color: #000;
+    }
+
+    .resultTable {
+        width: 100%;
+    }
+
+    .resultTable th,
+    .resultTable td {
+        border: 1px solid #000;
+        /* Add borders to table cells */
+        padding: 8px;
+    }
+
+    .resultTable thead {
+        background-color: darkcyan;
+        /* Add a background color to the table header */
+        font-weight: bold;
+        border-bottom: 2px solid #000;
+        /* Add a strong border between thead and tbody */
+    }
+</style>

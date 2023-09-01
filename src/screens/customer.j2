@@ -1,0 +1,108 @@
+<div class="container">
+    <h1 id="PageTitle">CUSTOMER HOMEPAGE</h1>
+    <div class="textContainer">
+        <span style="font-size: 3rem;">Logged in as {{userName}},</span>
+        <span style="font-size: 1rem;">Email: {{userEmail}}</span>
+        <span style="font-size: 2rem;margin-top: 1rem;">Total Items: {{cartItemsCount}}</span>
+        <span style="font-size: 2rem;margin-bottom: 1rem;">Total Price: {{cartTotal}}</span>
+    </div>
+    <div class="btnContainer">
+        <button>All Orders</button>
+        <button>Search Book</button>
+        <button>Add Book</button>
+        <button>Remove Book</button>
+        <button>Clear Cart</button>
+        <button>Checkout</button>
+        <button>Logout</button>
+    </div>
+    <div class="cartContainer">
+        <div class="cartHeader"></div>
+        <div class="cartItems">
+            <table class="cartTable">
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Title</th>
+                        <th>Qauntity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr>
+                        <td>{{ book.isbn }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.quantity }}</td>
+                        <td>{{ book.price }}</td>
+                        <td>{{ book.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<style>
+    #PageTitle {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btnContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btnContainer button {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        color: aliceblue;
+        background-color: grey;
+        border: none;
+        border-radius: 15px;
+        flex: 1;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .cartItems {
+        display: flex;
+        flex-direction: column;
+        background-color: #ccc;
+        border: 1px solid #000;
+        /* Add border around the entire table */
+        border-collapse: collapse;
+        color: #000;
+    }
+
+    .cartTable {
+        width: 100%;
+    }
+
+    .cartTable th,
+    .cartTable td {
+        border: 1px solid #000;
+        /* Add borders to table cells */
+        padding: 8px;
+    }
+
+    .cartTable thead {
+        background-color: darkcyan;
+        /* Add a background color to the table header */
+        font-weight: bold;
+        border-bottom: 2px solid #000;
+        /* Add a strong border between thead and tbody */
+    }
+</style>

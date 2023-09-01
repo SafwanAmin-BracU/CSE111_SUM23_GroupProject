@@ -1,0 +1,11 @@
+- In 1000 Books:
+    Unique ISBN: 1000
+    Unique Title: 988
+    Unique Author: 870
+    Unique Year: 123
+    Unique Genre: 10
+    Unique Price: 998
+    Unique Quantity: 100
+
+- ISBNs are unique, search for specific book by ISBN
+

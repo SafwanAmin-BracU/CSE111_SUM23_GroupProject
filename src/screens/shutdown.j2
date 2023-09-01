@@ -1,0 +1,13 @@
+{% if crash %}
+<div class="container" style="text-align: center; color:brown">
+    <span style="text-align: center;font-size: 4rem;">OHNO!</span><br>
+    <span style="text-align: center;font-size: 2rem;">The Store has crashed</span><br>
+    <span style="text-align: start; font-size: 1rem;margin-top: 1rem;">{{exception}}</span>
+</div>
+
+{% else %}
+<div class="container" style="text-align: center;">
+    <span style="text-align: center;font-size: 4rem;">SHUTTING DOWN...</span><br>
+    <span style="text-align: center;font-size: 2rem;">PLEASE RESTART KERNEL TO RUN AGAIN</span>
+</div>
+{% endif %}
